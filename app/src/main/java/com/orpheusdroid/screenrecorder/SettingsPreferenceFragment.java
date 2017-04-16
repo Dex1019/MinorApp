@@ -112,14 +112,13 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Sh
         res.setSummary(resolution);
     }
 
-//    TODO: Resolve fps problem
 
-//    private void updateFps(ListPreference fps){
-//        String fps_video = ((getValue("fps", "30")));
-//        fps.setValue(fps_video);
-//        fps.setSummary(fps_video);
-//
-//    }
+    private void updateFps(ListPreference fps) {
+        String fps_video = getValue(getString(R.string.fps_key), "30");
+        fps.setValue(fps_video);
+        fps.setSummary(fps_video);
+
+    }
 
 
     //Prevent upscaling of resolution which mediarecorder could not handle
@@ -208,9 +207,9 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Sh
 //            case R.string.preference_filename_format_title:
 //                pref.setSummary(getFileSaveFormat());
 //                break;
-//            case R.string.preference_fps_title:
-//                updateFps((ListPreference) pref);
-//                break;
+            case R.string.preference_fps_title:
+                updateFps((ListPreference) pref);
+                break;
 
             case R.string.preference_audio_record_title:
                 requestAudioPermission();
