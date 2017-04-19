@@ -13,9 +13,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_videocam_black_24dp"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:theme">
@@ -24,14 +24,14 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcut" />
+            <!--<meta-data-->
+            <!--android:name="android.app.shortcuts"/>-->
+            <!--android:resource="@xml/shortcut" />-->
         </activity>
 
         <service
@@ -41,6 +41,7 @@
         <service
             android:name=".FloatingControlService"
             android:exported="false" />
+
         <service android:name="org.openudid.OpenUDID_service">
 
             <intent-filter>
@@ -51,26 +52,6 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/about_activity_label" />
-
-        <!-- We no longer use firebase. Will be removed shortly -->
-        <!--<activity android:name=".DeepLinkActivity">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.intent.action.VIEW" />-->
-
-        <!--<category android:name="android.intent.category.BROWSABLE" />-->
-        <!--<category android:name="android.intent.category.DEFAULT" />-->
-
-        <!--<data-->
-        <!--android:host="screenrecording"-->
-        <!--android:scheme="od" />-->
-        <!--<data-->
-        <!--android:host="screenrecord.orpheusdroid.com"-->
-        <!--android:scheme="https" />-->
-        <!--<data-->
-        <!--android:host="screenrecord.orpheusdroid.com"-->
-        <!--android:scheme="http" />-->
-        <!--</intent-filter>-->
-        <!--</activity>-->
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -83,6 +64,17 @@
         </provider>
 
         <activity android:name=".EditVideoActivity" />
+
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

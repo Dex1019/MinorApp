@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">InnerLens</string>
+
     <!-- Resolution-->
     <string name="preference_resolution_title">Resolution</string>
     <string name="preference_resolution_summary">Select the resolution to record at</string>
@@ -59,12 +60,14 @@
     <!--Menu title-->
     <string name="menu_about_title">About</string>
     <string name="about_credits">Credits</string>
+    <string name="github_link">Source Code</string>
     <string name="about_libraries">Libraries</string>
     <string name="about_opensource">Open Source</string>
 
     <!--About Activity-->
     <string name="app_icon_credit_Niko">App Icons by %1$s\n\nwebsite: %2$s</string>
     <string name="video_editor_library_credit">Video Editor by %1$s\n\nGithub url: %2$s\n\nLicense: %3$s</string>
+    <string name="source_code">Github url: %1$s</string>
     <string name="analytics_library_credit">Crash reporting and analytics SDK by %1$s\n\nGithub url: %2$s\n\nLicense: %3$s</string>
     <string name="opensource_info">This app is opensourced and the source could be obained at \n\nGithub url: %1$s\n\nLicense: %2$s</string>
 
@@ -115,33 +118,18 @@
     <string name="prefs_category_misc_title">Misc</string>
 
 
-    <!--<string name="menu_privacy_policy">Privacy Policy</string>-->
-    <!--<string name="preference_show_touch_title">Show touches</string>-->
-
-
     <string name="preference_show_touch_summary">Enable/disable touch</string>
     <string name="preference_show_touch_key" translatable="false">touch_pointer</string>
-    <!--<string name="alert_plugin_not_found_title">Plugin not found</string>-->
-    <!--<string name="alert_plugin_not_found_message">Plugin is required to show touches. Do you want to buy it now?</string>-->
-
 
     <string name="alert_permission_denied_title">Storage Permission Denied</string>
     <string name="alert_permission_denied_message">The app requires storage permission to save the recorded video and change default save directory.The app is rendered useless without the permission\n\nDo you want to grant it now?</string>
     <string name="edit_intent_notification_action_text">Edit</string>
 
-
-    <!--<string name="prefs_category_analytics_title">Anonymous analytics</string>-->
-    <!--<string name="preference_crash_reporting_title">Crash reporting</string>-->
-
-
-    <!--<string name="preference_crash_reporting_summary">Enable anonymous crash reporting</string>-->
-    <!--<string name="preference_crash_reporting_key" translatable="false">crash_reporting</string>-->
-    <!--<string name="preference_anonymous_statistics_title">Anonymous statistics</string>-->
-    <!--<string name="preference_anonymous_statistics_summary">Enable anonymous statistics on number of app usages</string>-->
-    <!--<string name="preference_anonymous_statistics_key" translatable="false">usage_statistics</string>-->
     <string name="preference_floating_control_size_title">Floating controls icon size</string>
 
     <!--Floating controls-->
     <string name="preference_floating_control_size_summary">Set the icon size of on-screen floating control</string>
     <string name="preference_floating_control_size_key" translatable="false">floatingControlSize</string>
+
+
 </resources>

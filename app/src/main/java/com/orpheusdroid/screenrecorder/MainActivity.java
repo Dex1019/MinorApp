@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -83,13 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Acquiring media projection service to start screen mirroring
         mProjectionManager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-
-
-        //Respond to app shortcut
-//        if (getIntent().getAction() != null && getIntent().getAction().equals(getString(R.string.app_shortcut_action))) {
-//            startActivityForResult(mProjectionManager.createScreenCaptureIntent(), Const.SCREEN_RECORD_REQUEST_CODE);
-//            return;
-//        }
 
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -116,38 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        /* Enable analytics only for release builds */
-//        if (!BuildConfig.DEBUG) {
-//            Log.d(Const.TAG, "Is a release build. Setting up analytics");
-//            requestAnalyticsPermission();
-//            setupAnalytics();
-//        } else {
-//            Log.d(Const.TAG, "Debug build. Analytics is disabled");
-//        }
-
     }
-
-//    public void setupAnalytics(){
-//        if (!prefs.getBoolean(getString(R.string.preference_crash_reporting_key), false) &&
-//                !prefs.getBoolean(getString(R.string.preference_anonymous_statistics_key), false)){
-//            Log.d(Const.TAG, "Analytics disabled by user");
-//            return;
-//        }
-//        Countly.sharedInstance().init(this, Const.ANALYTICS_URL, Const.ANALYTICS_API_KEY,
-//                null, DeviceId.Type.OPEN_UDID);
-//        Countly.sharedInstance().setHttpPostForced(true);
-//
-//        if(prefs.getBoolean(getString(R.string.preference_crash_reporting_key), false)) {
-//            Countly.sharedInstance().enableCrashReporting();
-//            Log.d(Const.TAG, "Enabling crash reporting");
-//        }
-//        if(prefs.getBoolean(getString(R.string.preference_anonymous_statistics_key), false)) {
-//            Countly.sharedInstance().setStarRatingDisableAskingForEachAppVersion(false);
-//            Countly.sharedInstance().setViewTracking(true);
-//            Log.d(Const.TAG, "Enabling countly statistics");
-//        }
-//    }
 
 
     private void setupViewPager(ViewPager viewPager) {
@@ -223,14 +187,6 @@ public class MainActivity extends AppCompatActivity {
         startService(recorderService);
         this.finish();
     }
-
-    //Update video list fragment once save directory has been changed
-//    public void onDirectoryChanged() {
-//        ViewPagerAdapter adapter = (ViewPagerAdapter) viewPager.getAdapter();
-//        ((VideosListFragment) adapter.getItem(1)).removeVideosList();
-//        Log.d(Const.TAG, "reached main act");
-//    }
-
 
     /* Marshmallow style permission request.
      * We also present the user with a dialog to notify why storage permission is required */
@@ -327,79 +283,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-//    private void requestAnalyticsPermission() {
-//        if(!prefs.getBoolean(Const.PREFS_REQUEST_ANALYTICS_PERMISSION, true))
-//            return;
-//
-//        new AlertDialog.Builder(this)
-//                .setTitle("Allow anonymous analytics")
-//                .setMessage("Do you want to allow anonymous crash reporting and usage metrics now?" +
-//                        "\nRead the privacy policy to know more on what data are collected")
-//                .setPositiveButton("Enable analytics", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        analyticsSettingsListerner.updateAnalyticsSettings(Const.analytics.CRASHREPORTING);
-//                        analyticsSettingsListerner.updateAnalyticsSettings(Const.analytics.USAGESTATS);
-//                        prefs.edit()
-//                                .putBoolean(Const.PREFS_REQUEST_ANALYTICS_PERMISSION, false)
-//                                .apply();
-//                    }
-//                })
-//                .setNeutralButton("Enable Crash reporting only", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        analyticsSettingsListerner.updateAnalyticsSettings(Const.analytics.CRASHREPORTING);
-//                        prefs.edit()
-//                                .putBoolean(Const.PREFS_REQUEST_ANALYTICS_PERMISSION, false)
-//                                .apply();
-//                    }
-//                })
-//                .setNegativeButton("Disable everything", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        prefs.edit()
-//                                .putBoolean(Const.PREFS_REQUEST_ANALYTICS_PERMISSION, false)
-//                                .apply();
-//                    }
-//                })
-//                .setCancelable(false)
-//                .create().show();
-//    }
-
-
     //Set the callback interface for permission result from SettingsPreferenceFragment
     public void setPermissionResultListener(PermissionResultListener mPermissionResultListener) {
         this.mPermissionResultListener = mPermissionResultListener;
     }
-
-
-//    public void setAnalyticsSettingsListerner(AnalyticsSettingsListerner analyticsSettingsListerner) {
-//        this.analyticsSettingsListerner = analyticsSettingsListerner;
-//    }
-
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        if (!BuildConfig.DEBUG) {
-//            if (prefs.getBoolean(getString(R.string.preference_crash_reporting_key), false) ||
-//                    prefs.getBoolean(getString(R.string.preference_anonymous_statistics_key), false))
-//                Countly.sharedInstance().onStart(this);
-//        }
-//    }
-
-
-//    @Override
-//    protected void onStop() {
-//        if (!BuildConfig.DEBUG) {
-//            if (prefs.getBoolean(getString(R.string.preference_crash_reporting_key), false) ||
-//                    prefs.getBoolean(getString(R.string.preference_anonymous_statistics_key), false))
-//                Countly.sharedInstance().onStop();
-//        }
-//        super.onStop();
-//    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -420,19 +307,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-    //Update video list fragment once save directory has been changed
-//    public void onDirectoryChanged() {
-//        ViewPagerAdapter adapter = (ViewPagerAdapter) viewPager.getAdapter();
-//       ((VideosListFragment) adapter.getItem(1)).removeVideosList();
-//        Log.d(Const.TAG, "reached main act");
-//    }
-
-
-//    public interface AnalyticsSettingsListerner {
-//        void updateAnalyticsSettings(Const.analytics analytics);
-//    }
 
 
     //ViewPager class for tab view

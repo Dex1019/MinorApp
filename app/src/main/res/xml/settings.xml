@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Video Section-->
     <PreferenceCategory android:title="@string/prefs_category_video_settings_title">
         <ListPreference
             android:defaultValue="1440x2560"
@@ -17,16 +19,10 @@
             android:key="@string/fps_key"
             android:summary="@string/preference_fps_summary"
             android:title="@string/preference_fps_title" />
-
-        <!--<ListPreference-->
-        <!--android:defaultValue="7130317"-->
-        <!--android:entries="@array/bitrateArray"-->
-        <!--android:entryValues="@array/bitratesValue"-->
-        <!--android:key="@string/bitrate_key"-->
-        <!--android:summary="@string/preference_bit_summary"-->
-        <!--android:title="@string/preference_bit_title" />-->
-
     </PreferenceCategory>
+
+
+    <!-- Audio Section-->
     <PreferenceCategory android:title="@string/prefs_category_audio_settings_title">
         <CheckBoxPreference
             android:defaultValue="false"
@@ -34,18 +30,15 @@
             android:summary="@string/preference_audio_record_summary"
             android:title="@string/preference_audio_record_title" />
     </PreferenceCategory>
+
+    <!--File Save Section-->
     <PreferenceCategory android:title="@string/prefs_category_save_options_title">
         <com.orpheusdroid.screenrecorder.folderpicker.FolderChooser
             android:key="@string/savelocation_key"
             android:negativeButtonText="@android:string/cancel"
             android:positiveButtonText="@android:string/ok"
             android:title="@string/preference_save_location_title" />
-        <!--<ListPreference-->
-        <!--android:defaultValue="yyyyMMdd_hhmmss"-->
-        <!--android:entries="@array/filename"-->
-        <!--android:entryValues="@array/filename"-->
-        <!--android:key="@string/filename_key"-->
-        <!--android:title="@string/preference_filename_format_title" />-->
+
         <EditTextPreference
             android:defaultValue="recording"
             android:key="@string/fileprefix_key"
@@ -53,6 +46,8 @@
             android:title="@string/preference_filename_prefix_title" />
     </PreferenceCategory>
 
+
+    <!--Additional features Section-->
     <PreferenceCategory android:title="@string/prefs_category_misc_title">
         <CheckBoxPreference
             android:defaultValue="false"
@@ -67,14 +62,12 @@
             android:summary="@string/preference_floating_control_size_summary"
             android:text=" DP"
             android:title="@string/preference_floating_control_size_title" />
-        <!--<CheckBoxPreference-->
-        <!--android:defaultValue="false"-->
-        <!--android:key="@string/preference_show_touch_key"-->
-        <!--android:summary="@string/preference_show_touch_summary"-->
-        <!--android:title="@string/preference_show_touch_title" />-->
+
         <Preference
             android:summary=""
             android:title=""
             android:visibility="invisible" />
     </PreferenceCategory>
+
+
 </PreferenceScreen>

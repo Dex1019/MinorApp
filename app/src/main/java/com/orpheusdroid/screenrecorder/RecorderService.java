@@ -89,6 +89,8 @@ public class RecorderService extends Service {
             isBound = false;
         }
     };
+
+
     private long startTime, elapsedTime = 0;
     private SharedPreferences prefs;
     private WindowManager window;
@@ -302,7 +304,7 @@ public class RecorderService extends Service {
      * API24 */
     private NotificationCompat.Builder createNotification(NotificationCompat.Action action) {
         Bitmap icon = BitmapFactory.decodeResource(getResources(),
-                R.mipmap.ic_launcher);
+                R.mipmap.logo);
 
         Intent recordStopIntent = new Intent(this, RecorderService.class);
         recordStopIntent.setAction(Const.SCREEN_RECORDING_STOP);
@@ -314,7 +316,7 @@ public class RecorderService extends Service {
         NotificationCompat.Builder notification = new NotificationCompat.Builder(this)
                 .setContentTitle(getResources().getString(R.string.screen_recording_notification_title))
                 .setTicker(getResources().getString(R.string.screen_recording_notification_title))
-                .setSmallIcon(R.drawable.ic_notification)
+                .setSmallIcon(R.drawable.logo1)
                 .setLargeIcon(
                         Bitmap.createScaledBitmap(icon, 128, 128, false))
                 .setUsesChronometer(true)
@@ -330,7 +332,7 @@ public class RecorderService extends Service {
 
     private void showShareNotification() {
         Bitmap icon = BitmapFactory.decodeResource(getResources(),
-                R.mipmap.ic_launcher);
+                R.mipmap.logo);
         /*Intent Shareintent = new Intent()
                 .setAction(Intent.ACTION_SEND)
                 .putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(SAVEPATH)))

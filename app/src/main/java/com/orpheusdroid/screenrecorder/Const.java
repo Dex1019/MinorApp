@@ -21,16 +21,7 @@ public class Const {
     static final String RECORDER_INTENT_DATA = "recorder_intent_data";
     static final String RECORDER_INTENT_RESULT = "recorder_intent_result";
 
-//    static final String ANALYTICS_URL = "http://analytics.orpheusdroid.com";
-//    static final String ANALYTICS_API_KEY = "07273a5c91f8a932685be1e3ad0d160d3de6d4ba";
-
-//    static final String PREFS_REQUEST_ANALYTICS_PERMISSION = "request_analytics_permission";
-
     public enum RecordingState {
         RECORDING, PAUSED, STOPPED
     }
-
-//    public enum analytics {
-//        CRASHREPORTING, USAGESTATS
-//    }
 }
