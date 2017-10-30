@@ -1,5 +1,5 @@
-##*Minor Project*
-###Screen Recording Android Application
+# *Minor Project*
+### Screen Recording Android Application
 + Features
   - Record video upto 1080p
   - mp4 format supported
