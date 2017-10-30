@@ -1,4 +1,4 @@
-# *Minor Project*
+## *Minor Project*
 ### Screen Recording Android Application
 + Features
   - Record video upto 1080p
